@@ -1,4 +1,21 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #151719;
+  color: #fff;
+}
+button {
+  border: 0;
+  outline: 0;
 }
