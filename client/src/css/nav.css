@@ -16,7 +16,18 @@ nav .logo {
   background-image: linear-gradient(180deg, #ff00f7, #00d0ff);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 500;
+  font-weight: 700;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.logo a {
+  margin-left: 10px;
+}
+.logo img {
+  height: 40px;
+  width: 40px;
+  align-self: center;
 }
 nav .links {
   display: flex;
@@ -33,4 +44,13 @@ nav .login_signup {
   font-weight: 500;
   color: #4169e1;
   cursor: pointer;
+}
+/* responsive nav  */
+@media only screen and (max-width: 600px) {
+  nav {
+    padding: 0 15px;
+  }
+  nav .links {
+    gap: 15px;
+  }
 }
