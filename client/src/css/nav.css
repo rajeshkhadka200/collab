@@ -11,9 +11,7 @@ nav {
   font-size: 18px;
 }
 nav .logo {
-  /* color: #fff; */
-  /* font-size: 20px; */
-  background-image: linear-gradient(180deg, #ff00f7, #00d0ff);
+  background-image: linear-gradient(45deg, #ff00f7, #00d0ff);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
@@ -21,28 +19,35 @@ nav .logo {
   display: flex;
   align-items: center;
 }
-.logo a {
-  margin-left: 10px;
-}
+
 .logo img {
   height: 40px;
   width: 40px;
   align-self: center;
+  margin-right: 10px;
 }
 nav .links {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
+}
+.links img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 nav .editor_btn {
   color: #fff;
 }
 nav .login_signup {
-  border: 2px solid #4169e1;
-  padding: 4px 20px;
+  border: 2px solid var(--primary-btn);
+  padding: 5px 25px;
   border-radius: 5px;
   font-weight: 500;
-  color: #4169e1;
+  color: var(--primary-btn);
+  /* color: #fff; */
+  /* background-color: var(--primary-btn); */
   cursor: pointer;
 }
 /* responsive nav  */

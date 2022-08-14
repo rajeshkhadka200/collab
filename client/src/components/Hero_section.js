@@ -20,7 +20,6 @@ const HeroSection = () => {
         <NavLink className="get_started btn" to="/generare-room-id">
           Get started
         </NavLink>
-
         <a
           className="src_code btn"
           target={"_blank"}
@@ -29,10 +28,9 @@ const HeroSection = () => {
           View on github
         </a>
       </div>
-      <div className="arrow_hero_con">
+      {/* <div className="arrow_hero_con">
         <ArrowBackIosRoundedIcon className="down_arrow" />
-        <ArrowBackIosRoundedIcon className="down_arrow second" />
-      </div>
+      </div> */}
     </section>
   );
 };

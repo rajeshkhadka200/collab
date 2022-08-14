@@ -10,7 +10,7 @@
   text-align: center;
 }
 .hero_title span {
-  background-image: linear-gradient(180deg, #ff00f7, #00d0ff);
+  background-image: linear-gradient(45deg, #ff00f7, #00d0ff);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   /* color: #4169e1; */
@@ -58,13 +58,13 @@
   flex-direction: column;
 }
 .arrow_hero_con .second {
-  margin-top: -40px;
+  margin-top: -30px;
 }
 .down_arrow {
   transform: rotate(-90deg);
   cursor: pointer;
-  height: 60px !important;
-  width: 60px !important;
+  height: 50px !important;
+  width: 50px !important;
   opacity: 0.8;
 }
 
@@ -84,6 +84,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* margin-top: 100px; */
+    margin-top: 100px;
   }
 }

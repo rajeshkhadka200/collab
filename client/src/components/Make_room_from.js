@@ -1,19 +1,44 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "../css/room_gen_form.css";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const RoomForm = () => {
+  const navigate = useNavigate();
   // handle states for inputs
-  // const [details, setuseDetails] = useState({
-  //   room_id,
-  //   username,
-  // });
+  const [details, setDetails] = useState({
+    room_id: "",
+    username: "",
+  });
+
   // generate room new
   const generateID = () => {
-    const roomId = uuidv4();
+    let id = uuidv4();
+    setDetails({
+      ...details,
+      room_id: id,
+    });
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDetails({
+      ...details,
+      [name]: value,
+    });
+  };
+  // redirect to editor
 
+  const redirect = () => {
+    if (details.room_id === "" || details.username === "") {
+      return alert("Uswrname or room id is necessary");
+    }
+
+    navigate(`/editor/${details?.room_id}`, {
+      state: {
+        details,
+      },
+    });
+  };
   return (
     <>
       <section className="form_container">
@@ -27,11 +52,27 @@ const RoomForm = () => {
           </div>
           <div className="form_body">
             <h4>Paste invitation ROOM ID</h4>
-            <input required type="text" placeholder="Room id" />
-            <input required type="text" placeholder="username" />
+            <form>
+              <input
+                name="room_id"
+                value={details.room_id}
+                required
+                type="text"
+                onChange={handleChange}
+                placeholder="Room id"
+              />
+              <input
+                name="username"
+                value={details.username}
+                required
+                type="text"
+                onChange={handleChange}
+                placeholder="username"
+              />
+            </form>
           </div>
           <div className="form_btn_grp">
-            <NavLink to={"/goto"}>JOIN ROOM</NavLink>
+            <span onClick={redirect}>JOIN ROOM</span>
           </div>
           <div className="card_footer">
             If you don't have an invite then create{" "}

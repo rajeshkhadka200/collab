@@ -1,3 +1,11 @@
+:root {
+  --primary-bg: #111827;
+  --secondary-bg: #1f2937;
+  --primary-btn: #3466f6;
+  --secondary-btn: #1b5e20;
+  --primary-text: #ffffff;
+  --secondary-text: #3466f6;
+}
 * {
   padding: 0;
   margin: 0;
@@ -12,10 +20,50 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #151719;
-  color: #fff;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
 button {
   border: 0;
   outline: 0;
+  cursor: pointer;
+}
+.CodeMirror {
+  min-height: calc(100vh - 0px);
+  font-size: 23px;
+  line-height: 1.6;
+  padding-top: 10px;
+  letter-spacing: 1.2px;
+  cursor: auto;
+  /* font-family: "Raleway", sans-serif; */
+  font-weight: normal !important;
+}
+.CodeMirror * {
+  font-weight: normal !important;
+  font-family: "Fira Code", monospace;
+}
+.CodeMirror-linenumber {
+  color: rgba(255, 255, 255, 0.631) !important;
+}
+.cm-comment {
+  color: rgba(255, 255, 255, 0.344) !important;
+}
+.CodeMirror-gutter {
+  background-color: #1f2937 !important;
+}
+.cm-s-abbott.CodeMirror {
+  background-color: #1f2937 !important;
+}
+.cm-s-abbott span.cm-keyword {
+  font-weight: normal !important;
+}
+
+.cke_reset_all .CodeMirror-scroll * {
+  white-space: pre;
+}
+.cm-s-abbott span.cm-def,
+.cm-s-abbott span.cm-variable,
+.cm-s-abbott span.cm-variable-2,
+.cm-s-abbott span.cm-variable-3 {
+  color: #72a1ce !important;
 }

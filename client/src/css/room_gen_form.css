@@ -8,8 +8,7 @@
   height: fit-content;
   max-width: 90%;
   width: 450px;
-  background-color: #282a36;
-  /* background-color: #15171a7e; */
+  background-color: var(--secondary-bg);
   border-radius: 10px;
   padding: 20px;
 }
@@ -31,8 +30,7 @@
 }
 
 .header_desc span {
-  /* color: #4aed88; */
-  color: #1faeff;
+  color: var(--secondary-text);
 }
 .form .form_body {
   padding-top: 30px;
@@ -55,7 +53,7 @@
   display: flex;
   justify-content: flex-end;
 }
-.form_btn_grp a {
+.form_btn_grp span {
   text-transform: capitalize;
   font-weight: 700;
   letter-spacing: 1.1px;
@@ -65,7 +63,7 @@
   font-size: 0.9375rem;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: #3982e4;
+  background-color: var(--primary-btn);
   margin-left: auto;
 }
 
@@ -76,7 +74,7 @@
   margin: 20px auto 0;
 }
 .card_footer span {
-  color: #3982e4;
+  color: var(--primary-btn);
   text-decoration: underline;
   font-weight: 700;
   margin-left: 5px;

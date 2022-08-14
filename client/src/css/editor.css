@@ -1,0 +1,113 @@
+.editor_wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  overflow: hidden;
+}
+.editor_left {
+  height: 100vh;
+  background-color: var(--secondary-bg);
+  padding: 0 12px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(128, 128, 128, 0.308);
+}
+.editor_left .editor_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  gap: 12px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.editor_header img {
+  height: 50px;
+  width: 50px;
+}
+
+.editor_header .editor_header_desc h3 {
+  font-size: 25px;
+}
+
+.editor_header_desc span {
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+.editor_right {
+  max-height: 100%;
+  flex: 4;
+  background-color: var(--secondary-bg);
+}
+/* middle section users */
+.editor_left_user_section {
+  /* overflow-y: scroll; */
+}
+.editor_left_user_section span {
+  font-weight: bold;
+  display: block;
+  padding: 12px 0;
+  font-size: 18px;
+}
+.editor_left_user_section .all_users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* right section */
+.editor_right_header {
+  padding-right: 12px;
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* border-bottom: 1px solid rgba(128, 128, 128, 0.308); */
+}
+.btn_save {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-btn);
+  color: #fff;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.icons_save {
+  font-size: 20px;
+}
+
+/* footer */
+.editor_left_user_section {
+  flex: 1;
+}
+.editor_left_footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.editor_left_footer button {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.editor_left_footer .white_btn {
+  background-color: #eee;
+}
+.editor_left_footer .theme_btn {
+  background-color: var(--primary-btn);
+  color: #fff;
+}
+
+.editor {
+  overflow-x: hidden;
+}
