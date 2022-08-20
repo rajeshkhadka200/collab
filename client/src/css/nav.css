@@ -2,13 +2,14 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.308);
+
   padding: 0 50px;
   height: 80px;
   align-items: center;
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  background-color: var(--secondary-bg);
 }
 nav .logo {
   background-image: linear-gradient(45deg, #ff00f7, #00d0ff);
@@ -36,6 +37,7 @@ nav .links {
   width: 40px;
   border-radius: 50%;
   cursor: pointer;
+  border: 2px solid var(--primary-btn);
 }
 nav .editor_btn {
   color: #fff;
@@ -58,4 +60,62 @@ nav .login_signup {
   nav .links {
     gap: 15px;
   }
+}
+
+/* code for dropper */
+.menu {
+  position: absolute;
+  top: 80px;
+  right: 30px;
+  padding: 5px 15px;
+  background-color: #3a474b;
+  width: 170px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 27px;
+  width: 20px;
+  height: 20px;
+  background-color: #3a474b;
+  transform: rotate(45deg);
+}
+.menu ul li {
+  list-style: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu ul li .navbar_link {
+  font-size: 20px;
+  color: var(--primary-text);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.menu ul li:hover .navbar_link {
+  opacity: 1;
+}
+
+.menu ul li .navbar_a {
+  display: inline-block;
+  text-decoration: none;
+  color: #efefef;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 14px;
+}
+.menu ul li:hover .navbar_a {
+  color: var(--primary-text);
+}
+.menu.active {
+  visibility: visible;
+  opacity: 1;
 }

@@ -30,7 +30,7 @@ const EditorSidebar = () => {
         {/* this t */}
         <span>Connected Users</span>
         <div className="all_users">
-          <UserAvatar />
+          {/* <UserAvatar /> */}
         </div>
       </div>
       <div className="editor_left_footer">

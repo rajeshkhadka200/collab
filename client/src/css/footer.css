@@ -1,0 +1,6 @@
+footer {
+  width: 100vw;
+  height: 80px;
+  margin-top: auto;
+  background-color: var(--secondary-bg);
+}

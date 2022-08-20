@@ -1,9 +1,19 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const http = require("http");
-const { Server } = require("socket.io");
+import http from "http";
+import { Server } from "socket.io";
 const server = http.createServer(app);
 const io = new Server(server);
+
+// import routes
+import codeRoute from "./router/code.route.js";
+import userRoute from "./router/user.route.js";
+
+// initalize the middlewares
+app.use(express.json({ extented: false }));
+// inatialize route
+app.use("/collab/api", codeRoute);
+app.use("/collab/api", userRoute);
 
 // triger when the client gets connected to server
 io.on("connection", (socket) => {

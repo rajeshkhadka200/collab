@@ -1,3 +1,16 @@
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #5f6368;
+  border-radius: 8px;
+  min-height: 50px;
+}
+
 :root {
   --primary-bg: #111827;
   --secondary-bg: #1f2937;
@@ -6,13 +19,16 @@
   --primary-text: #ffffff;
   --secondary-text: #3466f6;
 }
+
 * {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  /* height: 100vh; */
 }
-h1 {
+h1,
+p {
   margin: 0;
   padding: 0;
 }
@@ -22,11 +38,18 @@ a {
 body {
   background-color: var(--primary-bg);
   color: var(--primary-text);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 button {
   border: 0;
   outline: 0;
   cursor: pointer;
+}
+input {
+  border: 0;
+  outline: 0;
 }
 .CodeMirror {
   min-height: calc(100vh - 0px);
@@ -35,12 +58,13 @@ button {
   padding-top: 10px;
   letter-spacing: 1.2px;
   cursor: auto;
-  /* font-family: "Raleway", sans-serif; */
+  font-family: inherit;
   font-weight: normal !important;
 }
 .CodeMirror * {
   font-weight: normal !important;
-  font-family: "Fira Code", monospace;
+  /* font-family: "Fira Code", monospace; */
+  font-family: inherit;
 }
 .CodeMirror-linenumber {
   color: rgba(255, 255, 255, 0.631) !important;

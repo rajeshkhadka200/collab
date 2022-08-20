@@ -1,0 +1,41 @@
+/* this is the css file of the my_code.js and single_code.js  */
+.my_code_wrapper {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.my_code_wrapper .search_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search_header input {
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: var(--secondary-bg);
+  color: #fff;
+  width: 265px;
+}
+
+/* single_code.js style */
+.single_code_wrapper {
+  margin-top: 50px;
+}
+.single_code_wrapper .single_code {
+  display: flex;
+  flex-direction: column;
+}
+.single_code .code_title h3 {
+  padding: 20px 0;
+  font-size: 23px;
+}
+
+.code_body {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--secondary-bg)!important;
+}
+
+.code_body span {
+  background-color: var(--secondary-bg);
+}
