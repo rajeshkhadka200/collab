@@ -52,9 +52,9 @@
   align-items: center;
   gap: 10px;
 }
-.detail_right button:hover{
+.detail_right button:hover {
   opacity: 0.8;
-} 
+}
 .add_snipit {
   background-color: var(--primary-btn);
 }
@@ -91,6 +91,9 @@
     margin: 10px auto;
     justify-content: center;
     gap: 10px;
+  }
+  .detail_right button {
+    justify-content: center;
   }
 
   .header_basic_info p {

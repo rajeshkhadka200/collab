@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import UserAvatar from "../components/Avatar";
 import "../css/editor.css";
 import { AiFillSave } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 import Codemirror from "codemirror";
 //imports fadons
@@ -22,14 +23,15 @@ import PostModel from "../components/Modal";
 import { ContexStore } from "../utils/Context";
 const Editor = () => {
   // handle model
+  const [users, setusers] = useState([]);
   const contextData = useContext(ContexStore);
   const [isModel, setisModel, handleModel] = contextData.modelData;
 
   const location = useLocation();
   const navigate = useNavigate();
   const { room_id, username } = location.state.details;
-
   const socketRef = useRef(null);
+  const actualCodeRef = useRef(null);
   useEffect(() => {
     async function init() {
       socketRef.current = await initSocketClient();
@@ -42,20 +44,53 @@ const Editor = () => {
       });
 
       const handleError = (err) => {
-        console.log("the err", err);
-        alert("Failed to conntect");
+        toast.error("Failed to connect, Please try again ");
+        navigate("/");
       };
+
+      // req for joining to the room
       socketRef.current.emit("join", {
         room_id,
         username,
       });
+
+      // listening for joined event
+      socketRef.current.on(
+        "joined",
+        ({ username: name, socketId, allClients }) => {
+          if (name !== username) {
+            toast.success(`${name} Joined the room !!`);
+          }
+          setusers(allClients);
+          socketRef.current.emit("sync-code", {
+            code: actualCodeRef.current,
+            socketId,
+          });
+        }
+      );
+
+      // listening for disconnected action
+      socketRef.current.on("disconnected", ({ username, socketId }) => {
+        toast.info(`${username} got disconnected !`);
+        setusers((prev) => {
+          return prev.filter((data) => {
+            return data.socketId !== socketId;
+          });
+        });
+      });
     }
     init();
+    return () => {
+      socketRef.current.disconnect();
+      socketRef.current.off("joined");
+      socketRef.current.off("disconnected");
+    };
   }, []);
 
+  const codeRef = useRef(null);
   useEffect(() => {
-    async function init() {
-      const editor = Codemirror.fromTextArea(
+    async function Editorinit() {
+      codeRef.current = Codemirror.fromTextArea(
         document.getElementById("editor"),
         {
           mode: { name: "javascript", json: true },
@@ -66,19 +101,40 @@ const Editor = () => {
           lineWrapping: true,
         }
       );
-      editor.getDoc().setValue('var msg = "Hi";');
+      // codeRef.current.setValue('var msg = "Hi";');
+      codeRef.current.on("change", (ins, changes) => {
+        const { origin } = changes;
+        const code = ins.getValue();
+        actualCodeRef.current = code;
+        if (origin !== "setValue") {
+          socketRef.current.emit("code-change", {
+            room_id,
+            code: actualCodeRef.current,
+          });
+        }
+      });
     }
-    init();
+    Editorinit();
   }, []);
 
-  if (!location.state) {
-    return <Navigate to="/" />;
-  }
+  useEffect(() => {
+    if (socketRef.current) {
+      socketRef.current.on("code-change", ({ code }) => {
+        if (code !== null) {
+          codeRef.current.setValue(code);
+        }
+      });
+    }
+
+    return () => {
+      socketRef.current.off("code-change");
+    };
+  }, [socketRef.current]);
 
   return (
     <>
       <section className="editor_wrapper">
-        <EditorSidebar />
+        <EditorSidebar users={users} socketRef={socketRef} />
         <div className="editor_right">
           <button onClick={handleModel} className="btn_save">
             Save <AiFillSave className="icons_save" />{" "}
@@ -88,7 +144,7 @@ const Editor = () => {
         </div>
       </section>
 
-      {isModel && <PostModel />}
+      {isModel && <PostModel code={actualCodeRef.current} />}
     </>
   );
 };

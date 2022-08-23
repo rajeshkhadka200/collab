@@ -1,5 +1,5 @@
 import { Entity, Schema } from "redis-om";
-import client from "../db/db.js";
+import client from "../redis/db.js";
 class Code extends Entity {
   toJSON() {
     return {

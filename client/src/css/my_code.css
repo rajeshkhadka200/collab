@@ -33,9 +33,19 @@
 .code_body {
   width: 100%;
   border-radius: 5px;
-  background-color: var(--secondary-bg)!important;
+  /* background-color: var(--secondary-bg) !important; */
+  position: relative;
 }
 
 .code_body span {
   background-color: var(--secondary-bg);
+}
+
+.code_body .dlt_icon {
+  position: absolute;
+  right: 35px;
+  top: 11.59px;
+  z-index: 10000;
+  color: rgba(255, 255, 255, 0.895) !important;
+  cursor: pointer;
 }

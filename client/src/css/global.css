@@ -47,6 +47,9 @@ button {
   outline: 0;
   cursor: pointer;
 }
+button:hover {
+  opacity: 0.8;
+}
 input {
   border: 0;
   outline: 0;

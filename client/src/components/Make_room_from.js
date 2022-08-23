@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/room_gen_form.css";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 const RoomForm = () => {
   const navigate = useNavigate();
   // handle states for inputs
@@ -30,7 +30,7 @@ const RoomForm = () => {
 
   const redirect = () => {
     if (details.room_id === "" || details.username === "") {
-      return alert("Uswrname or room id is necessary");
+      return toast.error("Credintials are required !!");
     }
 
     navigate(`/editor/${details?.room_id}`, {

@@ -1,5 +1,5 @@
 import { Entity, Schema } from "redis-om";
-import client from "../db/db.js";
+import client from "../redis/db.js";
 class User extends Entity {
   toJSON() {
     return {
@@ -7,6 +7,7 @@ class User extends Entity {
       user_name: this.user_name,
       user_email: this.user_email,
       user_profile: this.user_profile,
+      google_id: this.google_id,
     };
   }
 }
@@ -15,13 +16,16 @@ export const userSchema = new Schema(
   User,
   {
     user_name: {
-      type: "text",
+      type: "string",
     },
     user_profile: {
-      type: "text",
+      type: "string",
     },
     user_email: {
-      type: "text",
+      type: "string",
+    },
+    google_id: {
+      type: "string",
     },
   },
   {
