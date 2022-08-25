@@ -97,3 +97,11 @@ input {
 .cm-s-abbott span.cm-variable-3 {
   color: #72a1ce !important;
 }
+
+/* small styles  */
+.no_code {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+}

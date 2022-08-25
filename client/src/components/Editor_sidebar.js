@@ -34,10 +34,10 @@ const EditorSidebar = ({ users }) => {
       </div>
       <div className="editor_left_user_section">
         {/* this t */}
-        <span>Connected Users</span>
+        <span className="heading">Connected </span>
         <div className="all_users">
           {users.map(({ username }) => {
-            return <div key={username}>{username}</div>;
+            return <UserAvatar username={username} />;
           })}
         </div>
       </div>

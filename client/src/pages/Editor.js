@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import UserAvatar from "../components/Avatar";
+
 import "../css/editor.css";
 import { AiFillSave } from "react-icons/ai";
 import { toast } from "react-toastify";

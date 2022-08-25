@@ -1,7 +1,17 @@
-.avatar_user {
-  height: 10px;
-  width: 50px;
+.usr_icon {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.client {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.client .userName {
+  font-size: 15px;
+  padding: 3px 0;
+  text-transform: capitalize;
 }

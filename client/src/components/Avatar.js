@@ -1,14 +1,15 @@
 import React from "react";
 import Avatar, { ConfigProvider } from "react-avatar";
 import "../css/avatar.css";
-const UserAvatar = () => {
+const UserAvatar = ({ username }) => {
   return (
     <>
-      <div className="avatar_con">
-        <div className="avatar">
-          <Avatar name={"Rajesh Khadka"} className="avatar_user" round="10px"  />
-          <span>Rajesh Khadka</span>
-        </div>
+      <div className="client">
+        <Avatar name={username} size={70} className="usr_icon" round="14px" />
+        <span className="userName">
+          {username?.substring(0, 8)}
+          {username.length > 8 && "..."}
+        </span>
       </div>
     </>
   );

@@ -42,18 +42,18 @@
 }
 /* middle section users */
 .editor_left_user_section {
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
-.editor_left_user_section span {
-  font-weight: bold;
+.editor_left_user_section .heading {
+  font-weight: 500;
   display: block;
-  padding: 12px 0;
+  padding: 15px 0;
   font-size: 18px;
 }
 .editor_left_user_section .all_users {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 20px;
 }
 /* right section */
 .editor_right_header {

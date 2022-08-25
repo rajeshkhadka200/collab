@@ -34,7 +34,7 @@ const UserDetails = ({ codeNum }) => {
         </div>
         <div className="detail_right">
           <button className="add_snipit">
-            <AddIcon /> Open Editor
+            <AddIcon /> Go to Home
           </button>
           <button onClick={logOut} className="log_out">
             <LogoutIcon fontSize="small" />

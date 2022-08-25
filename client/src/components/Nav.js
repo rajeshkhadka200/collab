@@ -26,9 +26,7 @@ const Nav = () => {
   };
   // auth
   const url = process.env.REACT_APP_BACKEND_URL;
-  // const clientId = process.env.REACT_APP_CLIENT_ID;
-  const clientId =
-    "540851545535-j672khl5mugioirkffn6gajlf3tobjno.apps.googleusercontent.com";
+  const clientId = process.env.REACT_APP_CLIENT_ID;
 
   // onsuccess
   const onSuccess = async (data) => {

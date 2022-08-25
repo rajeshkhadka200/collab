@@ -1,5 +1,6 @@
 import React from "react";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import "../css/services.css";
 const Service = () => {
   const Card = (data) => {
     return (
@@ -34,15 +35,7 @@ const Service = () => {
   ];
   return (
     <>
-      <div className="fet_wrapper">
-        <h3>Collab's Features</h3>
-        <section className="service">
-          {data.map((items, i) => {
-            console.log(items);
-            return <Card data={items} key={i} />;
-          })}
-        </section>
-      </div>
+      <div></div>
     </>
   );
 };

@@ -36,3 +36,13 @@ export const deleteCode = async (req, res) => {
     res.status(400).send(error);
   }
 };
+// search code
+export const searchCode = async (req, res) => {
+  const { search_term } = req.params;
+  try {
+    await codeRepository.remove(req.params.code_id);
+    res.status(200).send("Deleted");
+  } catch (error) {
+    res.status(400).send(error);
+  }
+};

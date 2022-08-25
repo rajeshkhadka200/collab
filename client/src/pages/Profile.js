@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import UserDetails from "../components/User_details";
 import Nav from "../components/Nav.js";
 import MyCode from "../components/My_code";
@@ -30,6 +30,9 @@ const Profile = () => {
           <Nav />
           <UserDetails codeNum={minePost?.length} />
           <MyCode code={minePost} />
+          {minePost.length == 0 && (
+            <div className="no_code">Yo haven't saved any codes yet ! 🙂</div>
+          )}
         </>
       )}
     </>

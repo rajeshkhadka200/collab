@@ -1,54 +1,5 @@
-.service {
-  padding: 0 50px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-bottom: 50px;
-  gap: 60px;
-}
-.fet_wrapper {
-  margin-bottom: 60px;
-}
-.fet_wrapper h3 {
-  text-align: center;
-  font-size: 30px;
-}
-.service {
-  margin-top: 50px;
-}
-.card_feature {
+.service_sec {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: var(--secondary-bg);
-  padding: 15px 10px;
-  border-radius: 5px;
-  width: 300px;
-  /* height: 400px; */
-}
-.fe_title {
-  padding: 15px 0;
-}
-.card_feature .fe_body {
-  text-align: center;
-}
-.icon {
-  height: 55px;
-  width: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primary-btn);
-  /* padding: 5px; */
-  border-radius: 100%;
-}
-.icon_ft {
-  /* padding: 20px 0; */
-  font-size: 35px !important;
-}
-@media only screen and (max-width: 600px) {
-  .service {
-    gap: 20px;
-  }
 }

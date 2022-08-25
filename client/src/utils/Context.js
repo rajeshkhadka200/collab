@@ -1,6 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import React, { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 export const ContexStore = createContext();
 
 const Context = (props) => {
@@ -12,7 +13,7 @@ const Context = (props) => {
     if (token) {
       setisModel(!isModel);
     } else {
-      alert("Login to save code !!");
+      toast.info("Login to save code !!");
     }
   };
 
