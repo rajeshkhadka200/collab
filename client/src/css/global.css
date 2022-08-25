@@ -1,14 +1,17 @@
 /* scroll bar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
+  margin-left: 18px;
+  border-radius: 100vw;
 }
 ::-webkit-scrollbar-thumb {
-  background: #5f6368;
-  border-radius: 8px;
-  min-height: 50px;
+  background: #3a474b;
+  border-radius: 100vw;
+  /* border: 2px solid transparent; */
 }
 
 :root {

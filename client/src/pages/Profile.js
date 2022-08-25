@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import UserDetails from "../components/User_details";
 import Nav from "../components/Nav.js";
 import MyCode from "../components/My_code";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ContexStore } from "../utils/Context";
 const Profile = () => {
-  const [minePost, setMinePost] = useState([]);
+  const contextData = useContext(ContexStore);
+  const [minePost, setMinePost] = contextData.post;
   const navigate = useNavigate();
   const token = Cookies.get("token_collab");
   const url = process.env.REACT_APP_BACKEND_URL;

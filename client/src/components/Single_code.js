@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import Tooltip from "@mui/material/Tooltip";
 import axios from "axios";
+import { ContexStore } from "../utils/Context";
 const SingleCode = (props) => {
+  const contextData = useContext(ContexStore);
+  const [minePost, setMinePost] = contextData.post;
   const url = process.env.REACT_APP_BACKEND_URL;
   const deleteCode = async (id) => {
     const res = await axios.delete(`${url}/code/${id}`);
-    
+    console.log(res);
+    if (res.status === 200) {
+      setMinePost((prev) => {
+        return prev.filter((post) => {
+          return post.code_id !== id;
+        });
+      });
+    }
   };
   return (
     <>

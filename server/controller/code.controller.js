@@ -29,13 +29,10 @@ export const getMycode = async (req, res) => {
 // delete code by id
 export const deleteCode = async (req, res) => {
   // console.log(req.params);
-  const result = await codeRepository.remove(req.params.code_id);
-  if (!result) {
-    return res.status(400).json({
-      message: "Could not delete",
-    });
+  try {
+    await codeRepository.remove(req.params.code_id);
+    res.status(200).send("Deleted");
+  } catch (error) {
+    res.status(400).send(error);
   }
-  res.status(200).json({
-    message: "Deleted",
-  });
 };

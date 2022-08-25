@@ -1,12 +1,13 @@
 .home_hero_section {
-  /* height: calc(100vh - 80px); */
+  height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 150px;
+  /* margin-top: 150px; */
+  justify-content: center;
 }
 .home_hero_section .hero_title {
-  font-size: 50px;
+  font-size: 60px;
   text-align: center;
 }
 .hero_title span {
@@ -70,6 +71,9 @@
 
 /* responsive hero section */
 @media only screen and (max-width: 600px) {
+  .home_hero_section {
+    margin-bottom: 20px;
+  }
   .hero_btn_grp .btn {
     width: 90%;
   }
@@ -86,4 +90,13 @@
     flex-direction: column;
     margin-top: 100px;
   }
+}
+
+/* for video */
+.video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+  margin-top: -70px;
 }

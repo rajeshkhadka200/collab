@@ -7,6 +7,7 @@ const Context = (props) => {
   const token = Cookies.get("token_collab");
   const [isModel, setisModel] = useState(false);
   const [userData, setUserData] = useState([]);
+  const [minePost, setMinePost] = useState([]);
   const handleModel = () => {
     if (token) {
       setisModel(!isModel);
@@ -39,6 +40,7 @@ const Context = (props) => {
         value={{
           modelData: [isModel, setisModel, handleModel],
           userInfo: [userData, setUserData],
+          post: [minePost, setMinePost],
         }}
       >
         {props.children}
