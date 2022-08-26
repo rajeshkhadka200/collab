@@ -15,7 +15,7 @@ import {
   disconnecting,
   join,
   syncCode,
-} from "./libs/socket.service.js";
+} from "./services/socket.service.js";
 
 // initalize the middlewares
 app.use(cors());
