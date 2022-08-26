@@ -46,13 +46,13 @@ nav .editor_btn {
   color: #fff;
 }
 nav .login_signup {
-  border: 2px solid var(--primary-btn);
+  /* border: 2px solid var(--primary-btn); */
   padding: 5px 25px;
   border-radius: 5px;
-  font-weight: 500;
+  /* font-weight: 500; */
   color: var(--primary-btn);
-  /* color: #fff; */
-  /* background-color: var(--primary-btn); */
+  color: #fff;
+  background-color: var(--primary-btn);
   cursor: pointer;
 }
 /* responsive nav  */

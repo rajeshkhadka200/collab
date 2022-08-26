@@ -1,5 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 
 import "../css/editor.css";
 import { AiFillSave } from "react-icons/ai";
@@ -14,14 +19,15 @@ import "codemirror/addon/edit/closetag";
 import "codemirror/addon/edit/closebrackets";
 import "codemirror/addon/edit/closebrackets";
 import "codemirror/addon/edit/matchbrackets";
-import "codemirror/addon/wrap/hardwrap.js";
-import "codemirror/addon/hint/javascript-hint";
 
 import EditorSidebar from "../components/Editor_sidebar";
 import { initSocketClient } from "../utils/socket";
 import PostModel from "../components/Modal";
 import { ContexStore } from "../utils/Context";
-const Editor = () => {
+import { disconnecting, join, joined } from "../utils/libs";
+const Editor = (params) => {
+  const p = useParams();
+
   // handle model
   const [users, setusers] = useState([]);
   const contextData = useContext(ContexStore);
@@ -48,36 +54,10 @@ const Editor = () => {
         navigate("/");
       };
 
-      // req for joining to the room
-      socketRef.current.emit("join", {
-        room_id,
-        username,
-      });
-
-      // listening for joined event
-      socketRef.current.on(
-        "joined",
-        ({ username: name, socketId, allClients }) => {
-          if (name !== username) {
-            toast.success(`${name} Joined the room !!`);
-          }
-          setusers(allClients);
-          socketRef.current.emit("sync-code", {
-            code: actualCodeRef.current,
-            socketId,
-          });
-        }
-      );
-
-      // listening for disconnected action
-      socketRef.current.on("disconnected", ({ username, socketId }) => {
-        toast.info(`${username} got disconnected !`);
-        setusers((prev) => {
-          return prev.filter((data) => {
-            return data.socketId !== socketId;
-          });
-        });
-      });
+      // sockets functions
+      join(socketRef, room_id, username); // req for joining to the room
+      joined(socketRef, username, setusers, actualCodeRef, toast); // listening for joined event
+      disconnecting(socketRef, setusers, toast); // listening for disconnected action
     }
     init();
     return () => {
@@ -101,7 +81,6 @@ const Editor = () => {
           lineWrapping: true,
         }
       );
-      // codeRef.current.setValue('var msg = "Hi";');
       codeRef.current.on("change", (ins, changes) => {
         const { origin } = changes;
         const code = ins.getValue();
@@ -112,6 +91,17 @@ const Editor = () => {
             code: actualCodeRef.current,
           });
         }
+
+        // informing all clients if user pasted something into editor
+        if (origin === "paste") {
+          socketRef.current.emit("pasted", {
+            room_id,
+            username,
+          });
+        }
+        socketRef.current.on("pasted-res", (data) => {
+          console.log(data);
+        });
       });
     }
     Editorinit();

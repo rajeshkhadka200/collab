@@ -40,8 +40,17 @@ export const deleteCode = async (req, res) => {
 export const searchCode = async (req, res) => {
   const { search_term } = req.params;
   try {
-    await codeRepository.remove(req.params.code_id);
-    res.status(200).send("Deleted");
+    const result = await codeRepository
+      .search()
+      .where("code_title")
+      .matches(search_term)
+      .return.all();
+    if (result.length < 1) {
+      return res.status(204).json({
+        message: "No code found !",
+      });
+    }
+    res.status(200).json(result);
   } catch (error) {
     res.status(400).send(error);
   }

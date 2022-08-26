@@ -31,13 +31,23 @@ const getAllClients = (room_id) => {
 };
 // triger when the client gets connected to server
 io.on("connection", (socket) => {
-  console.log("socket connected", socket.id);
   socket.on("join", ({ username, room_id }) => {
     usersinSocket[socket.id] = username;
     socket.join(room_id);
     const allClients = getAllClients(room_id);
     allClients.forEach(({ socketId }) => {
       io.to(socketId).emit("joined", {
+        allClients,
+        username,
+        socketId: socket.id,
+      });
+    });
+  });
+  socket.on("pasted", ({ room_id, username }) => {
+    console.log(username);
+    const allClients = getAllClients(room_id);
+    allClients.forEach(({ socketId }) => {
+      io.to(socketId).emit("pasted-res", {
         allClients,
         username,
         socketId: socket.id,
