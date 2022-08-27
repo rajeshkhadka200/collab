@@ -9,6 +9,7 @@ const SingleCode = (props) => {
   const contextData = useContext(ContexStore);
   const [minePost, setMinePost] = contextData.post;
   const url = process.env.REACT_APP_BACKEND_URL;
+  const { tag } = props;
   const deleteCode = async (id) => {
     const res = await axios.delete(`${url}/code/${id}`);
     if (res.status === 200) {
@@ -25,7 +26,7 @@ const SingleCode = (props) => {
       <div className="single_code_wrapper">
         <div className="single_code">
           <div className="code_title">
-            <h3>{props.data.code_title}</h3>
+            <h3 className={tag ? "hilight" : null}>{props.data.code_title}</h3>
           </div>
           <div className="code_body">
             <Tooltip title="Delete">

@@ -30,6 +30,7 @@
 .single_code .code_title h3 {
   padding: 20px 0;
   font-size: 23px;
+  display: block;
 }
 
 .code_body {
@@ -67,4 +68,8 @@
   margin: 0 !important;
   color: #fff !important;
   font-size: 20px !important;
+}
+
+.hilight {
+  color: yellowgreen;
 }

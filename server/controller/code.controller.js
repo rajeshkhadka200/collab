@@ -39,6 +39,7 @@ export const deleteCode = async (req, res) => {
 // search code
 export const searchCode = async (req, res) => {
   const { search_term } = req.params;
+  console.log("hello");
   try {
     const result = await codeRepository
       .search()

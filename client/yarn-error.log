@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-google-login^5.2.2
+  C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js remove react-icons
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\Java\jdk-17.0.2\bin;C:\Users\dell\AppData\Local\Android\Sdk\platform-tools;C:\Users\dell\AppData\Roaming\npm
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-google-login%5E5.2.2: Not found
-      at Request.params.callback [as _callback] (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66138:18)
-      at Request.self.callback (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
-      at Request.emit (node:events:527:28)
-      at Request.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
-      at Request.emit (node:events:527:28)
-      at IncomingMessage.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
-      at Object.onceWrapper (node:events:641:28)
-      at IncomingMessage.emit (node:events:539:35)
-      at endReadableNT (node:internal/streams/readable:1345:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: ENOENT: no such file or directory, scandir 'H:\React JS\collab\client\node_modules\@react-oauth'
 
 npm manifest: 
   {
@@ -43,14 +33,16 @@ npm manifest:
       "@testing-library/user-event": "^13.2.1",
       "axios": "^0.27.2",
       "codemirror": "5.65.2",
+      "gapi-script": "^1.2.0",
+      "js-cookie": "^3.0.1",
       "react": "^18.2.0",
       "react-avatar": "^5.0.3",
       "react-code-blocks": "^0.0.9-0",
       "react-dom": "^18.2.0",
-      "react-google-login": "^5.2.2",
-      "react-icons": "^4.4.0",
+      "react-google-login": "5.2.2",
       "react-router-dom": "6.3.0",
       "react-scripts": "5.0.1",
+      "react-toastify": "^9.0.8",
       "socket.io-client": "^4.5.1",
       "uuid": "^8.3.2",
       "web-vitals": "^2.1.0"
@@ -3367,7 +3359,7 @@ Lockfile:
       strip-ansi "^6.0.0"
       wrap-ansi "^7.0.0"
   
-  clsx@^1.2.1:
+  clsx@^1.1.1, clsx@^1.2.1:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
     integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
@@ -4896,6 +4888,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
     integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
   
+  gapi-script@^1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/gapi-script/-/gapi-script-1.2.0.tgz#8106ad0abb36661ce4fab62ef6efada288d7169e"
+    integrity sha512-NKTVKiIwFdkO1j1EzcrWu/Pz7gsl1GmBmgh+qhuV2Ytls04W/Eg5aiBL91SCiBM9lU0PMu7p1hTVxhh1rPT5Lw==
+  
   gensync@^1.0.0-beta.2:
     version "1.0.0-beta.2"
     resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
@@ -6145,6 +6142,11 @@ Lockfile:
       "@jest/core" "^27.5.1"
       import-local "^3.0.2"
       jest-cli "^27.5.1"
+  
+  js-cookie@^3.0.1:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.1.tgz#9e39b4c6c2f56563708d7d31f6f5f21873a92414"
+    integrity sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==
   
   "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
     version "4.0.0"
@@ -7820,7 +7822,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
     integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
   
-  react-google-login@^5.2.2:
+  react-google-login@5.2.2:
     version "5.2.2"
     resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.2.2.tgz#a20b46440c6c1610175ef75baf427118ff0e9859"
     integrity sha512-JUngfvaSMcOuV0lFff7+SzJ2qviuNMQdqlsDJkUM145xkGPVIfqWXq9Ui+2Dr6jdJWH5KYdynz9+4CzKjI5u6g==
@@ -7933,6 +7935,13 @@ Lockfile:
       lowlight "1.12.1"
       prismjs "^1.8.4"
       refractor "^2.4.1"
+  
+  react-toastify@^9.0.8:
+    version "9.0.8"
+    resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.0.8.tgz#3876c89fc6211a29027b3075010b5ec39ebe4f7e"
+    integrity sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ==
+    dependencies:
+      clsx "^1.1.1"
   
   react-transition-group@^4.4.5:
     version "4.4.5"
