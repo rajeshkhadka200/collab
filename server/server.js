@@ -50,3 +50,6 @@ server.listen(PORT, () => {
 // inatialize route
 app.use("/api/code", codeRoute);
 app.use("/api/user", userRoute);
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
