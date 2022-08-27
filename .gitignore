@@ -10,3 +10,4 @@ server/node_modules
 server/yarn.lock
 server/yarn-error.lock
 server/.env
+server/vercel.json
