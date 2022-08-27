@@ -44,12 +44,13 @@ io.on("connection", (socket) => {
 // listen to port
 const PORT = process.env.port || 5000;
 server.timeout = 0;
-server.listen(PORT, () => {
-  console.log("listening to port 5000");
+server.listen(() => {
+  console.log(`listening to port ${PORT}`);
 });
 // inatialize route
 app.use("/api/code", codeRoute);
 app.use("/api/user", userRoute);
+
 app.get("/", (req, res) => {
   res.send("Hello");
 });
