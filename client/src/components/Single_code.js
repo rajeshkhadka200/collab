@@ -5,6 +5,7 @@ import Tooltip from "@mui/material/Tooltip";
 import axios from "axios";
 import { ContexStore } from "../utils/Context";
 import { toast } from "react-toastify";
+import Highlight from "react-highlighter";
 const SingleCode = (props) => {
   const contextData = useContext(ContexStore);
   const [minePost, setMinePost] = contextData.post;
@@ -26,10 +27,22 @@ const SingleCode = (props) => {
       <div className="single_code_wrapper">
         <div className="single_code">
           <div className="code_title">
-            <h3 className={tag ? "hilight" : null}>{props.data.code_title}</h3>
+            <h3>
+              <Highlight
+                search={tag}
+                matchStyle={{
+                  background: "#3a474b",
+                  paddingInline: "5px",
+                  color: "#fff",
+                  borderRadius: "3px",
+                }}
+              >
+                {props.data.code_title}
+              </Highlight>
+            </h3>
           </div>
           <div className="code_body">
-            <Tooltip title="Delete">
+            <Tooltip arrow title="Delete">
               <DeleteForeverOutlinedIcon
                 onClick={() => {
                   deleteCode(props.data.code_id);
@@ -43,7 +56,6 @@ const SingleCode = (props) => {
               language={"javascript"}
               showLineNumbers={true}
               theme={dracula}
-              codeBlock
             />
           </div>
         </div>

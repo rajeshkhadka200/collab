@@ -9,6 +9,7 @@ const Context = (props) => {
   const [isModel, setisModel] = useState(false);
   const [userData, setUserData] = useState([]);
   const [minePost, setMinePost] = useState([]);
+  const [videoModal, setvideoModal] = useState(false);
   const handleModel = () => {
     if (token) {
       setisModel(!isModel);
@@ -42,6 +43,7 @@ const Context = (props) => {
           modelData: [isModel, setisModel, handleModel],
           userInfo: [userData, setUserData],
           post: [minePost, setMinePost],
+          vdoModal : [videoModal, setvideoModal]
         }}
       >
         {props.children}

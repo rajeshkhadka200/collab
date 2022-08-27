@@ -8,16 +8,22 @@ import Home from "./pages/Home";
 import GenerateRoom from "./pages/GenerateRoom";
 import Editor from "./pages/Editor";
 import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <ToastContainer autoClose={1000} pauseOnFocusLoss={false} />
       <Switch>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/generare-room-id" element={<GenerateRoom />}></Route>
-        <Route path="/editor/:room_id" element={<Editor />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
+        <Route exact path="/" element={<Home />}></Route>
+        <Route
+          exact
+          path="/generare-room-id"
+          element={<GenerateRoom />}
+        ></Route>
+        <Route exact path="/editor/:room_id" element={<Editor />}></Route>
+        <Route exact path="/profile" element={<Profile />}></Route>
+        <Route element={<NotFound />} />
       </Switch>
     </BrowserRouter>
   );

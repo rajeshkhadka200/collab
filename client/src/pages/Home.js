@@ -1,16 +1,17 @@
-import React from "react";
-
+import React, { useContext, useState } from "react";
 import HeroSection from "../components/Hero_section";
-import PostModel from "../components/Modal";
 import Nav from "../components/Nav";
-import Service from "../components/Service";
+import VideoModal from "../components/VideoModal";
+import { ContexStore } from "../utils/Context";
 
 const Home = () => {
+  const contextData = useContext(ContexStore);
+  const [videoModal, setvideoModal] = contextData.vdoModal;
   return (
     <>
       <Nav />
       <HeroSection />
-      <Service />
+      {videoModal && <VideoModal />}
     </>
   );
 };

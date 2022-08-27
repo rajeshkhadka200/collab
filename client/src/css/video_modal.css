@@ -1,0 +1,19 @@
+.wrap {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.493);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .video {
+  margin-top: 60px;
+  height: 500px;
+  width: 900px;
+  border-radius: 5px;
+}

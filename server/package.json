@@ -12,6 +12,10 @@
     "socket.io": "^4.5.1"
   },
   "scripts": {
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "prod": "node server.js"
+  },
+  "engines": {
+    "node": ">=14 <15"
   }
 }

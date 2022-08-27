@@ -39,6 +39,12 @@ const Editor = (params) => {
   const socketRef = useRef(null);
   const actualCodeRef = useRef(null);
   useEffect(() => {
+    if (!username) {
+      return <Navigate to="/" />;
+    }
+  }, []);
+
+  useEffect(() => {
     async function init() {
       socketRef.current = await initSocketClient();
       // error handalling

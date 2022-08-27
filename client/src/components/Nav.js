@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
+import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 import "../css/nav.css";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 //materail ui icons imports
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -12,14 +12,20 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { useGoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import Cookies from "js-cookie";
+import { Tooltip } from "@mui/material";
 import { ContexStore } from "../utils/Context";
 
 const Nav = () => {
-  const navigate = useNavigate();
+  const pathname = window.location.pathname;
+
   const token = Cookies.get("token_collab");
   const contextData = useContext(ContexStore);
   const [userData, setUserData] = contextData.userInfo;
+  const [videoModal, setvideoModal] = contextData.vdoModal;
 
+  const preview = () => {
+    setvideoModal(true);
+  };
   const menuToggle = () => {
     const toggleMenu = document.querySelector(".menu");
     toggleMenu.classList.toggle("active");
@@ -85,6 +91,12 @@ const Nav = () => {
         <NavLink to={"/"}>Collab</NavLink>
       </div>
       <div className="links">
+        {pathname === "/" && (
+          <Tooltip style={{ zIndex: "1500" }} arrow title="Watch video">
+            <OndemandVideoIcon className="previewIcon" onClick={preview} />
+          </Tooltip>
+        )}
+
         {!token && (
           <span onClick={signIn} className="login_signup">
             Login

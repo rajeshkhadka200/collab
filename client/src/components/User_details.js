@@ -2,16 +2,22 @@
 
 import React, { useContext } from "react";
 import "../css/user_details.css";
-import AddIcon from "@mui/icons-material/Add";
+import AssignmentReturnOutlinedIcon from "@mui/icons-material/AssignmentReturnOutlined";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { ContexStore } from "../utils/Context";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+
 const UserDetails = ({ codeNum }) => {
+  const navigate = useNavigate();
   const contextData = useContext(ContexStore);
   const [userData] = contextData.userInfo;
   const logOut = () => {
     Cookies.remove("token_collab");
     window.location.reload();
+  };
+  const redirect = () => {
+    navigate("/");
   };
   return (
     <>
@@ -33,8 +39,8 @@ const UserDetails = ({ codeNum }) => {
           </div>
         </div>
         <div className="detail_right">
-          <button className="add_snipit">
-            <AddIcon /> Go to Home
+          <button onClick={redirect} className="add_snipit">
+            <AssignmentReturnOutlinedIcon fontSize="small" /> Go to Home
           </button>
           <button onClick={logOut} className="log_out">
             <LogoutIcon fontSize="small" />

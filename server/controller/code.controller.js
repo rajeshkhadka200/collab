@@ -1,6 +1,6 @@
 import { codeRepository } from "../schema/code.schema.js";
 
-// post code
+// post code to the redis json db
 export const postCode = async (req, res) => {
   const code = codeRepository.createEntity(req.body);
   const id = await codeRepository.save(code);
@@ -16,7 +16,6 @@ export const postCode = async (req, res) => {
 
 // get the code of specific user by user id
 export const getMycode = async (req, res) => {
-  // const person = await codeRepository.fetch(req.params.user_id);
   const { user_id } = req.params;
   const myCode = await codeRepository
     .search()
@@ -28,7 +27,6 @@ export const getMycode = async (req, res) => {
 
 // delete code by id
 export const deleteCode = async (req, res) => {
-  // console.log(req.params);
   try {
     await codeRepository.remove(req.params.code_id);
     res.status(200).send("Deleted");
@@ -39,12 +37,11 @@ export const deleteCode = async (req, res) => {
 // search code
 export const searchCode = async (req, res) => {
   const { search_term } = req.params;
-  console.log("hello");
   try {
     const result = await codeRepository
       .search()
       .where("code_title")
-      .matches(search_term)
+      .match(search_term)
       .return.all();
     if (result.length < 1) {
       return res.status(204).json({

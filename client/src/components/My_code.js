@@ -20,7 +20,7 @@ const MyCode = ({ code }) => {
       return toast.info("No code found");
     }
     setsearchResult(res.data);
-    toast.success(`Result found`);
+    toast.success(` Result found`);
   };
   useEffect(() => {
     if (input === "") {
@@ -41,8 +41,8 @@ const MyCode = ({ code }) => {
               type="text"
               placeholder="serch code title"
             />
-            <button>
-              <SearchIcon onClick={search} className="search_icon" />
+            <button onClick={search}>
+              <SearchIcon className="search_icon" />
             </button>
           </div>
         </div>
