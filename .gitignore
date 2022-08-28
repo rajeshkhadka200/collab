@@ -10,4 +10,8 @@ server/node_modules
 server/yarn.lock
 server/yarn-error.lock
 server/.env
- 
+
+
+#deploy
+server/Procfile
+.gitignore
