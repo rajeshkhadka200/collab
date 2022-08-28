@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CopyBlock, dracula, codepen, atomOneDark } from "react-code-blocks";
+import { CopyBlock, dracula } from "react-code-blocks";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import Tooltip from "@mui/material/Tooltip";
 import axios from "axios";

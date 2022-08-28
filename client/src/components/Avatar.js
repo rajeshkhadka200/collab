@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar, { ConfigProvider } from "react-avatar";
+import Avatar from "react-avatar";
 import "../css/avatar.css";
 const UserAvatar = ({ username }) => {
   return (

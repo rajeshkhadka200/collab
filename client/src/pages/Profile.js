@@ -30,7 +30,7 @@ const Profile = () => {
           <Nav />
           <UserDetails codeNum={minePost?.length} />
           <MyCode code={minePost} />
-          {minePost.length == 0 && (
+          {minePost.length === 0 && (
             <div className="no_code">Yo haven't saved any codes yet ! 🙂</div>
           )}
         </>

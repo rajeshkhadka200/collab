@@ -27,8 +27,7 @@ const Context = (props) => {
         const user = await axios.get(`${url}/user/${token}`);
         setUserData(user.data);
       } catch (error) {
-        console.log(error);
-        alert("Error fetching user");
+        toast.info("Something went wrong !");
       }
     };
     if (token) {
@@ -43,7 +42,7 @@ const Context = (props) => {
           modelData: [isModel, setisModel, handleModel],
           userInfo: [userData, setUserData],
           post: [minePost, setMinePost],
-          vdoModal : [videoModal, setvideoModal]
+          vdoModal: [videoModal, setvideoModal],
         }}
       >
         {props.children}

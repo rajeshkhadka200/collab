@@ -10,7 +10,7 @@ const MyCode = ({ code }) => {
   const url = process.env.REACT_APP_BACKEND_URL;
 
   const search = async () => {
-    if (input == "") {
+    if (input === "") {
       toast.error(`Search cannot be empty`);
       return;
     }

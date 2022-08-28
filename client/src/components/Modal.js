@@ -12,7 +12,7 @@ const PostModel = ({ code }) => {
 
   // post code to database
   const [title, settitle] = useState("");
-
+  
   const postCode = async (e) => {
     e.preventDefault();
     if (code === null) {

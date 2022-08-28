@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
@@ -17,7 +17,6 @@ import { ContexStore } from "../utils/Context";
 
 const Nav = () => {
   const pathname = window.location.pathname;
-
   const token = Cookies.get("token_collab");
   const contextData = useContext(ContexStore);
   const [userData, setUserData] = contextData.userInfo;
@@ -58,7 +57,7 @@ const Nav = () => {
 
   // onfaliure
   const onFailure = (err) => {
-    if (err.details == "Cookies are not enabled in current environment.") {
+    if (err.details === "Cookies are not enabled in current environment.") {
       toast.error("Auth doesnot currently works in Privite windows !");
     }
   };
@@ -86,7 +85,7 @@ const Nav = () => {
     <nav>
       <div className="logo">
         <NavLink to={"/"}>
-          <img src="/assets/logo.png" />
+          <img alt="collab-user" src="/assets/logo.png" />
         </NavLink>
         <NavLink to={"/"}>Collab</NavLink>
       </div>

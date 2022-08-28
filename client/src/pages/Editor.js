@@ -1,10 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import {
-  Navigate,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import "../css/editor.css";
 import { AiFillSave } from "react-icons/ai";
@@ -15,19 +10,15 @@ import Codemirror from "codemirror";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/abbott.css";
 import "codemirror/mode/javascript/javascript";
-import "codemirror/addon/edit/closetag";
 import "codemirror/addon/edit/closebrackets";
 import "codemirror/addon/edit/closebrackets";
-import "codemirror/addon/edit/matchbrackets";
 
 import EditorSidebar from "../components/Editor_sidebar";
 import { initSocketClient } from "../utils/socket";
 import PostModel from "../components/Modal";
 import { ContexStore } from "../utils/Context";
 import { disconnecting, join, joined } from "../utils/libs";
-const Editor = (params) => {
-  const p = useParams();
-
+const Editor = () => {
   // handle model
   const [users, setusers] = useState([]);
   const contextData = useContext(ContexStore);
