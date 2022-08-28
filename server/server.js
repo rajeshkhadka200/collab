@@ -42,9 +42,9 @@ io.on("connection", (socket) => {
 });
 
 // listen to port
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 server.timeout = 0;
-server.listen(() => {
+server.listen(PORT, () => {
   console.log(`listening to port ${PORT}`);
 });
 // inatialize route

@@ -13,6 +13,9 @@
   },
   "scripts": {
     "server": "nodemon server.js",
-    "prod": "node server.js"
+    "start" : "node server.js"
+  },
+  "engines": {
+    "node": "16.15.0"
   }
 }
