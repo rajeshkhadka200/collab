@@ -85,7 +85,10 @@ const Nav = () => {
     <nav>
       <div className="logo">
         <NavLink to={"/"}>
-          <img alt="collab-user" src="/assets/logo.png" />
+          <img
+            alt="collab-user"
+            src="https://cdn-icons-png.flaticon.com/512/1534/1534959.png"
+          />
         </NavLink>
         <NavLink to={"/"}>Collab</NavLink>
       </div>

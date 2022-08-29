@@ -44,7 +44,10 @@ const RoomForm = () => {
       <section className="form_container">
         <div className="form">
           <div className="form_header">
-            <img src="/assets/logo.png" alt="no img found" />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1534/1534959.png"
+              alt="no img found"
+            />
             <div className="header_desc">
               <h3>Collab</h3>
               <span>Real time code collobration </span>

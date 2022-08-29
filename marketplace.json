@@ -1,0 +1,22 @@
+{
+  "app_name": "collab",
+  "description": "A realtime code-sync tool, Collab is the platform for any developer or a code enthusiasts who wants to collobrate with other developer around the globe.",
+  "hidden": false,
+  "rank": 89,
+  "type": "Full App",
+  "contributed_by": "Community",
+  "repo_url": "https://github.com/rajeshkhadka200/collab",
+  "download_url": "https://github.com/rajeshkhadka200/collab/archive/refs/heads/main.zip",
+  "hosted_url": "https://collabb-app.netlify.app",
+  "quick_deploy": false,
+  "deploy_buttons": [],
+  "language": ["JavaScript"],
+  "redis_commands": [".search", ".createEntity", ".remove", ".save", ".delete"],
+  "redis_features": ["Json", "Search"],
+  "redis_modules": ["RediJSON", "RediSearch"],
+  "app_image_urls": [],
+  "youtube_url": "",
+  "special_tags": ["Hackathon", "Redis Hakathon", "DEV X REDIS"],
+  "verticals": ["Education"],
+  "markdown": "https://raw.githubusercontent.com/rajeshkhadka200/collab/main/README.md"
+}

@@ -1,8 +1,8 @@
 #client
+client/.env
 client/node_modules
 client/yarn-error.lock
 client/yarn.lock
-client/.env
 
 
 #server
