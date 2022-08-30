@@ -3,18 +3,15 @@
  Collab is Realtime code sync tool where users can collab to others developers to write code on a same time. Beside this, user can save written code snippets to the website by creating profile in the website.
 
 # Overview video
-
+[![Watch here.](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q8130i0zenxe8m8arkgm.png)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
 ## How it works
-
 The workflow of application is describe by the following architecture diagram.
 
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ksedd7zucbr2sftyvrjw.png" alt="architecture diagram">
 
+At first, the socket connection is established through client. When the user get connected to the socket, users write the code in Editor. And the code written in editor get saved in `redis` as a `Redis JSON` .
 
-
-
-
-At first, Ideao communicated with the api for retrieving the idea and user data, posting them to the backend server, Searching idea and delete the idea according to the user.
 ### How the data is stored:
 The collab's data is stored in JSON format based upon RediJSON. The overall mapping of data is configured by `Redis-Om` Node js package.
 
@@ -81,7 +78,7 @@ const userSchema = new Schema(
 );
 ```
 
-All of functionality of api which makes Ideao are as follow:
+All the controllers files that communicates to `redis` for various `CRUD` operation.
 - [Code's api](https://github.com/rajeshkhadka200/collab/blob/main/server/controller/code.controller.js)
 - [User's api](https://github.com/rajeshkhadka200/collab/blob/main/server/controller/user.controller.js)
 
@@ -108,8 +105,6 @@ const { user_id } = req.params;
 ```js
 await codeRepository.remove(req.params.code_id);
 ``` 
-### Performance Benchmarks
-
 
 ## How to run it locally?
 ### Prerequisites
@@ -118,14 +113,9 @@ await codeRepository.remove(req.params.code_id);
 - yarn -v1.22.18
 
 ### Local installation
+> Go to `/server` folder (`cd ./server`) and then:
 
-# Move to local branch
-git checkout local
-
-Go to `/server` folder (`cd ./server`) and then:
-
-# copy file and set proper data inside
-cp .env.example .env
+# Manage all .env file
 
 # install dependencies
 yarn install
@@ -135,8 +125,7 @@ yarn server
 
 Go to `/client` folder (`cd ./client`) and then:
 
-# copy file and set proper data inside
-cp .env.example .env
+# Manage all .env file
 
 # install dependencies
 yarn install
