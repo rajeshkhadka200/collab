@@ -3,7 +3,7 @@
  Collab is Realtime code sync tool where users can collab to others developers to write code on a same time. Beside this, user can save written code snippets to the website by creating profile in the website.
 
 # Overview video
-[![Watch here.](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q8130i0zenxe8m8arkgm.png)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![Watch here.]([https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q8130i0zenxe8m8arkgm.png](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r4u27mmulxsq3553vhra.png))](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
 ## How it works
 The workflow of application is describe by the following architecture diagram.
